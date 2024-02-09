@@ -8,13 +8,23 @@ The application listens for `member_joined_channel` events from Slack, then uses
 
 This system not only makes the onboarding process more efficient, but also helps new hires feel welcomed and empowered from their first day on the job. It's part of our commitment to creating a positive and supportive work environment for all team members.
 
-### Approach
+## Key Features
 
-This project is a Node.js-based onboarding bot for Slack. It listens for `member_joined_channel` events from Slack, fetches user data from Smartsheet, and sends a personalized onboarding message to the new user.
+* **Slack Event Trigger:** When a new user joins a designated Slack channel, the onboarding process is initiated.
+* **Smartsheet Data Fetch:** The project retrieves the user's email address from Slack and uses it to fetch their corresponding onboarding data from a designated Smartsheet.
+* **Personalized Onboarding Message:** A customized onboarding message is generated using the data from Smartsheet and sent to the new user directly on Slack.
+* **Onboarding Completion:** The project offers functionality to mark the onboarding process as complete directly in Smartsheet.
 
-### Getting Started
+## How it Works 
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+1. A new user joins a specific Slack channel (e.g., "#new-hires").
+2. The project listens for this Slack event.
+3. Upon the event, it fetches the user's email from Slack.
+4. Using the email, it queries Smartsheet to find the user's onboarding plan.
+5. A personalized onboarding message (with tasks, links, etc.) is compiled from the fetched data.
+6. This message is sent to the user as a direct message on Slack.
+7. (Optional) A button or action in Slack would allow the user to signal completion.
+8. (Optional) Marking completion updates the associated row in Smartsheet.
 
 ### Prerequisites
 
